@@ -1,0 +1,17 @@
+{
+  "name": "skip-path-geometry-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "超声斜射探伤折线声程几何核算服务（HTTP API）",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
