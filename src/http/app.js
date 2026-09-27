@@ -19,14 +19,14 @@ function createApp(options = {}) {
     res.json({
       service: '超声斜射探伤折线声程几何核算服务',
       endpoints: {
-        'POST /api/skip-geometry': '折线声程几何核算（半跨 / 一个 skip / 一个半 skip）',
-        'POST /api/echo-depth': '由回波声程反推缺陷埋深',
-        'PUT /api/configs/:name': '保存命名探伤配置（板厚 / 折射角 / 声速）',
+        'POST /api/skip-geometry': '折线声程几何核算（半跨 / 一个 skip / 一个半 skip；geometry 可选 plate/pipe，缺省板材）',
+        'POST /api/echo-depth': '由回波声程反推缺陷埋深（geometry 可选 plate/pipe，缺省板材）',
+        'PUT /api/configs/:name': '保存命名探伤配置（板材：板厚 / 折射角 / 声速；管材：geometry=pipe 加外径 / 壁厚）',
         'GET /api/configs': '列出全部探伤配置',
         'GET /api/configs/:name': '取出一套探伤配置',
         'DELETE /api/configs/:name': '删除一套探伤配置',
-        'POST /api/configs/:name/skip-geometry': '按命名配置做几何核算',
-        'POST /api/configs/:name/echo-depth': '按命名配置做埋深反推',
+        'POST /api/configs/:name/skip-geometry': '按命名配置做几何核算（走各自的几何模型）',
+        'POST /api/configs/:name/echo-depth': '按命名配置做埋深反推（走各自的几何模型）',
       },
     });
   });
