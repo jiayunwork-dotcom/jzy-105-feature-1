@@ -7,6 +7,8 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
 COPY src ./src
+# 随仓库的测试一并进镜像，容器里可直接 npm test 全量跑通
+COPY test ./test
 
 EXPOSE 3000
 USER node
